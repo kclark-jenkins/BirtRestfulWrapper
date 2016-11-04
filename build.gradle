@@ -1,0 +1,34 @@
+group 'BirtExecutor'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+def log4jGroup    = 'log4j'
+def log4jArtifact = 'log4j'
+def log4jVersion  = '1.2.17'
+
+def httpClientGroup    = 'org.apache.httpcomponents'
+def httpClientArtifact = 'httpclient'
+def httpClientVersion    = '4.5.2'
+
+def gsonGroup = 'com.google.code.gson'
+def gsonArtifact = 'gson'
+def gsonVersion = '2.7'
+
+def apacheCommonsGroup = 'org.apache.commons'
+def apacheCommonsArtifact = 'commons-io'
+def apacheCommonsVersion = '1.3.2'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile group: log4jGroup,         name: log4jArtifact,         version: log4jVersion
+    compile group: httpClientGroup,    name: httpClientArtifact,    version: httpClientVersion
+    compile group: gsonGroup,          name: gsonArtifact,          version: gsonVersion
+    compile group: apacheCommonsGroup, name: apacheCommonsArtifact, version: apacheCommonsVersion
+}
